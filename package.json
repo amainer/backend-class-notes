@@ -1,0 +1,21 @@
+{
+  "name": "github",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "file:express"
+  },
+  "devDependencies": {
+    "sinon-chai": "^2.13.0"
+  }
+}
