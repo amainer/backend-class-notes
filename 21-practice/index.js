@@ -21,6 +21,24 @@ app.get('/data', (req, res) => {
 });
 
 
+bankdata.find({}).exec().then((result) => {
+  result.forEach((data) => {
+    data.amount = parseInt(data.amount);
+    bankdata.save(data);
+    // { obj.moop = new NumberInt( obj.moop ); db.my_collection.save(obj);
+  })
+
+})
+
+app.get('/scorecard', (req, res) => {
+  bankdata.aggregate([
+    {$group: { _id: null, total: { $sum: "$amount"}}}
+  ]).exec().then((result) => {
+    res.send(result);
+  })
+})
+
+
 app.listen(8080, () => {
   console.log('Server listening on port 8080');
 });
